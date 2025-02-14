@@ -11,7 +11,7 @@ export default function TutorialLayout({ children }: { children: React.ReactNode
     <div className={`flex min-h-screen transition-colors duration-300
       ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <TutorialSidebar />
-      <div className="flex-1">
+      <div className="flex-1 md:ml-64">
         <TutorialHeader />
         <main className="p-6">
           {children}

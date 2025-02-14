@@ -1,4 +1,4 @@
-// File: C:\Users\harsh\OneDrive\Documents\working project\X\src\app\tutorial\page.tsx
+// File: C:\Users\harsh\OneDrive\Github\InfinityX\X\src\app\tutorial\page.tsx
 import * as entry from '../../../../src/app/tutorial/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

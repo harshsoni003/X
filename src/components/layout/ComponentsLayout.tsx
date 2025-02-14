@@ -15,7 +15,7 @@ const ComponentsLayout = ({
     <div className={`flex min-h-screen transition-colors duration-200
       ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}>
       <ComponentsSidebar />
-      <div className="flex-1 ml-64">
+      <div className="flex-1 md:ml-64">
         <ComponentsHeader />
         <main className="pt-16 px-6">
           <div className="max-w-4xl mx-auto py-8">

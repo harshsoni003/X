@@ -6,7 +6,7 @@ export default function TutorialPage() {
   return (
     <TutorialLayout>
       <div className="flex flex-col items-center py-12">
-        <h1 className="text-4xl font-bold mb-4">Sign In/Up with Email/OTP Template</h1>
+        <h1 className="text-4xl font-bold mb-4"> Updating soon all tutorial!</h1>
         <p className="text-lg mb-12 text-center max-w-2xl">
           Explore our comprehensive setup for sign-in/up with email and OTP. Download templates, view tutorials, and schedule live building sessions.
         </p>
