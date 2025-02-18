@@ -33,3 +33,8 @@ Your `package.json` already has the correct scripts:
 ```
 
 Please update your Start Command in Render from `npm run dev` to `npm run start`, then trigger a new deploy. This should resolve your port detection issues and run your application properly in production mode.
+
+
+
+
+icon is  lower the navbar is in sidebar page 

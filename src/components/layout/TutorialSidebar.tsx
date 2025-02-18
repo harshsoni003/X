@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown, ChevronRight, Download, BookOpen, Calendar, Lock, ChevronsRight, X } from 'lucide-react'
+import { ChevronDown, ChevronRight, Download, BookOpen, Calendar, Lock, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -24,36 +24,36 @@ const navigation: NavItem[] = [
       { title: 'Schedule Meeting', href: '/tutorial/sign-in-up/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
     ],
   },
-  {
-    title: 'Payment gateway',
-    href: '/tutorial/another-title-1',
-    icon: <BookOpen className="w-4 h-4" />,
-    children: [
-      { title: 'Download Template', href: '/tutorial/another-title-1/download' },
-      { title: 'View Tutorial', href: '/tutorial/another-title-1/view', icon: <Lock className="w-4 h-4 ml-2" /> },
-      { title: 'Schedule Meeting', href: '/tutorial/another-title-1/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
-    ],
-  },
-  {
-    title: 'Email verification',
-    href: '/tutorial/another-title-2',
-    icon: <Calendar className="w-4 h-4" />,
-    children: [
-      { title: 'Download Template', href: '/tutorial/another-title-2/download' },
-      { title: 'View Tutorial', href: '/tutorial/another-title-2/view', icon: <Lock className="w-4 h-4 ml-2" /> },
-      { title: 'Schedule Meeting', href: '/tutorial/another-title-2/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
-    ],
-  },
-  {
-    title: 'Admin dashboard',
-    href: '/tutorial/another-title-3',
-    icon: <Download className="w-4 h-4" />,
-    children: [
-      { title: 'Download Template', href: '/tutorial/another-title-3/download' },
-      { title: 'View Tutorial', href: '/tutorial/another-title-3/view', icon: <Lock className="w-4 h-4 ml-2" /> },
-      { title: 'Schedule Meeting', href: '/tutorial/another-title-3/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
-    ],
-  },
+  // {
+  //   title: 'Payment gateway',
+  //   href: '/tutorial/another-title-1',
+  //   icon: <BookOpen className="w-4 h-4" />,
+  //   children: [
+  //     { title: 'Download Template', href: '/tutorial/another-title-1/download' },
+  //     { title: 'View Tutorial', href: '/tutorial/another-title-1/view', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //     { title: 'Schedule Meeting', href: '/tutorial/another-title-1/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //   ],
+  // },
+  // {
+  //   title: 'Email verification',
+  //   href: '/tutorial/another-title-2',
+  //   icon: <Calendar className="w-4 h-4" />,
+  //   children: [
+  //     { title: 'Download Template', href: '/tutorial/another-title-2/download' },
+  //     { title: 'View Tutorial', href: '/tutorial/another-title-2/view', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //     { title: 'Schedule Meeting', href: '/tutorial/another-title-2/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //   ],
+  // },
+  // {
+  //   title: 'Admin dashboard',
+  //   href: '/tutorial/another-title-3',
+  //   icon: <Download className="w-4 h-4" />,
+  //   children: [
+  //     { title: 'Download Template', href: '/tutorial/another-title-3/download' },
+  //     { title: 'View Tutorial', href: '/tutorial/another-title-3/view', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //     { title: 'Schedule Meeting', href: '/tutorial/another-title-3/schedule', icon: <Lock className="w-4 h-4 ml-2" /> },
+  //   ],
+  // },
 ]
 
 const NavItemComponent = ({ item, level = 0 }: { item: NavItem; level?: number }) => {
@@ -137,28 +137,30 @@ export default function TutorialSidebar() {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <div className="md:hidden fixed top-20 left-4 z-50">
-        {!isOpen ? (
-          <button
-            onClick={() => setIsOpen(true)}
-            className={`p-2 rounded-lg shadow-lg transition-all duration-200 hover:scale-110
-              ${theme === 'dark' 
-                ? 'bg-gray-800 text-white hover:bg-gray-700' 
-                : 'bg-white text-gray-800 hover:bg-gray-100'}`}
-          >
-            <ChevronsRight className="w-6 h-6" />
-          </button>
-        ) : null}
-      </div>
+      {/* Mobile menu button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`md:hidden fixed top-20 left-4 z-50 p-2 rounded-lg transition-colors
+          ${theme === 'dark' 
+            ? 'bg-gray-800 hover:bg-gray-700' 
+            : 'bg-white hover:bg-gray-100'}`}
+      >
+        {isOpen ? (
+          <X className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+        ) : (
+          <Menu className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+        )}
+      </button>
 
-      {/* Sidebar */}
-      <div className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:translate-x-0
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className={`w-full md:w-64 min-h-screen fixed left-0 top-0 overflow-y-auto border-r transition-colors duration-200
-          ${theme === 'dark'
-            ? 'bg-black border-gray-800'
-            : 'bg-white border-gray-200'}`}>
+      <div className="relative">
+        {/* Sidebar */}
+        <div className={`fixed top-0 left-0 z-40 h-full w-64 transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+          md:translate-x-0 border-r
+          ${theme === 'dark' 
+            ? 'bg-black border-gray-800' 
+            : 'bg-white border-gray-200'}`}
+        >
           <div className={`p-4 border-b transition-colors flex justify-between items-center
             ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
             <div>
@@ -170,19 +172,14 @@ export default function TutorialSidebar() {
                 v1.0.0
               </div>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className={`md:hidden p-2 rounded-lg transition-colors
-                ${theme === 'dark' 
-                  ? 'hover:bg-gray-800 text-gray-400 hover:text-white' 
-                  : 'hover:bg-gray-100 text-gray-600 hover:text-black'}`}
-            >
-              <X className="w-5 h-5" />
-            </button>
           </div>
-          <nav className="py-4 w-full">
+
+          <nav className="py-4">
             {navigation.map((item) => (
-              <NavItemComponent key={item.href} item={item} />
+              <NavItemComponent 
+                key={item.href} 
+                item={item} 
+              />
             ))}
           </nav>
         </div>

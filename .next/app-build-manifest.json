@@ -16,15 +16,35 @@
       "static/chunks/main-app.js",
       "static/chunks/app/components/page.js"
     ],
-    "/templates/page": [
+    "/components/layout/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/templates/page.js"
+      "static/chunks/app/components/layout/page.js"
     ],
     "/tutorial/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/tutorial/page.js"
+    ],
+    "/tutorial/sign-in-up/download/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tutorial/sign-in-up/download/page.js"
+    ],
+    "/tutorial/sign-in-up/view/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tutorial/sign-in-up/view/page.js"
+    ],
+    "/tutorial/sign-in-up/schedule/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tutorial/sign-in-up/schedule/page.js"
+    ],
+    "/components/layout/grid/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/layout/grid/page.js"
     ]
   }
 }

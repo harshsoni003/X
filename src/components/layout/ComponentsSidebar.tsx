@@ -7,7 +7,8 @@ import {
   Square,
   FileInput,
   ChevronsRight,
-  X
+  X,
+  Menu
 } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -32,26 +33,26 @@ const navigation: NavItem[] = [
       { title: 'Stack', href: '/components/layout/stack' },
     ],
   },
-  {
-    title: 'UI Elements',
-    href: '/components/ui',
-    icon: <Square className="w-4 h-4" />,
-    children: [
-      { title: 'Buttons', href: '/components/ui/buttons' },
-      { title: 'Cards', href: '/components/ui/cards' },
-      { title: 'Modals', href: '/components/ui/modals' },
-    ],
-  },
-  {
-    title: 'Forms',
-    href: '/components/forms',
-    icon: <FileInput className="w-4 h-4" />,
-    children: [
-      { title: 'Input', href: '/components/forms/input' },
-      { title: 'Select', href: '/components/forms/select' },
-      { title: 'Checkbox', href: '/components/forms/checkbox' },
-    ],
-  },
+  // {
+  //   title: 'UI Elements',
+  //   href: '/components/ui',
+  //   icon: <Square className="w-4 h-4" />,
+  //   children: [
+  //     { title: 'Buttons', href: '/components/ui/buttons' },
+  //     { title: 'Cards', href: '/components/ui/cards' },
+  //     { title: 'Modals', href: '/components/ui/modals' },
+  //   ],
+  // },
+  // {
+  //   title: 'Forms',
+  //   href: '/components/forms',
+  //   icon: <FileInput className="w-4 h-4" />,
+  //   children: [
+  //     { title: 'Input', href: '/components/forms/input' },
+  //     { title: 'Select', href: '/components/forms/select' },
+  //     { title: 'Checkbox', href: '/components/forms/checkbox' },
+  //   ],
+  // },
 ]
 
 function NavItemComponent({ item, level = 0 }: { item: NavItem; level?: number }) {
@@ -120,34 +121,36 @@ function NavItemComponent({ item, level = 0 }: { item: NavItem; level?: number }
   )
 }
 
-const ComponentsSidebar = () => {
+export default function ComponentsSidebar() {
   const { theme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <div className="md:hidden fixed top-20 left-4 z-50">
-        {!isOpen ? (
-          <button
-            onClick={() => setIsOpen(true)}
-            className={`p-2 rounded-lg shadow-lg transition-all duration-200 hover:scale-110
-              ${theme === 'dark' 
-                ? 'bg-gray-800 text-white hover:bg-gray-700' 
-                : 'bg-white text-gray-800 hover:bg-gray-100'}`}
-          >
-            <ChevronsRight className="w-6 h-6" />
-          </button>
-        ) : null}
-      </div>
+      {/* Mobile menu button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`md:hidden fixed top-20 left-4 z-50 p-2 rounded-lg transition-colors
+          ${theme === 'dark' 
+            ? 'bg-gray-800 hover:bg-gray-700' 
+            : 'bg-white hover:bg-gray-100'}`}
+      >
+        {isOpen ? (
+          <X className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+        ) : (
+          <Menu className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+        )}
+      </button>
 
-      {/* Sidebar */}
-      <div className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:translate-x-0
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className={`w-full md:w-64 min-h-screen fixed left-0 top-0 overflow-y-auto border-r transition-colors duration-200
-          ${theme === 'dark'
-            ? 'bg-black border-gray-800'
-            : 'bg-white border-gray-200'}`}>
+      <div className="relative">
+        {/* Sidebar */}
+        <div className={`fixed top-0 left-0 z-40 h-full w-64 transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+          md:translate-x-0 border-r
+          ${theme === 'dark' 
+            ? 'bg-black border-gray-800' 
+            : 'bg-white border-gray-200'}`}
+        >
           <div className={`p-4 border-b transition-colors flex justify-between items-center
             ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
             <div>
@@ -189,6 +192,4 @@ const ComponentsSidebar = () => {
       </div>
     </>
   )
-}
-
-export default ComponentsSidebar 
+} 

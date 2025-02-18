@@ -1,4 +1,10 @@
 {
   "/page": "app/page.js",
-  "/tutorial/page": "app/tutorial/page.js"
+  "/components/layout/page": "app/components/layout/page.js",
+  "/components/page": "app/components/page.js",
+  "/tutorial/sign-in-up/download/page": "app/tutorial/sign-in-up/download/page.js",
+  "/tutorial/sign-in-up/view/page": "app/tutorial/sign-in-up/view/page.js",
+  "/tutorial/page": "app/tutorial/page.js",
+  "/tutorial/sign-in-up/schedule/page": "app/tutorial/sign-in-up/schedule/page.js",
+  "/components/layout/grid/page": "app/components/layout/grid/page.js"
 }

@@ -109,11 +109,14 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+              className={`md:hidden p-2 rounded-full transition-colors duration-200 
+                ${theme === 'dark'
+                  ? 'hover:bg-gray-800 text-white'
+                  : 'hover:bg-gray-200 text-black'}`}
             >
               {isMobileMenuOpen ? 
-                <X className="w-6 h-6 dark:text-white text-black" /> : 
-                <Menu className="w-6 h-6 dark:text-white text-black" />
+                <X className="w-6 h-6" /> : 
+                <Menu className="w-6 h-6" />
               }
             </button>
           </div>
