@@ -111,7 +111,7 @@ const NavItemComponent = ({ item, level = 0 }: { item: NavItem; level?: number }
   )
 }
 
-const Sidebar = () => {
+export default function Sidebar() {
   const { theme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -122,20 +122,21 @@ const Sidebar = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={`md:hidden fixed top-20 left-4 z-50 p-2 rounded-lg transition-colors
           ${theme === 'dark' 
-            ? 'bg-gray-800 hover:bg-gray-700' 
-            : 'bg-white hover:bg-gray-100'}`}
+            ? 'bg-gray-800 hover:bg-gray-700 text-white' 
+            : 'bg-white hover:bg-gray-100 text-black'}`}
       >
         {isOpen ? (
-          <X className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+          <X className="w-6 h-6" />
         ) : (
-          <Menu className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+          <Menu className="w-6 h-6" />
         )}
       </button>
 
-      {/* Sidebar */}
-      <div className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:translate-x-0
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className={`w-full md:w-64 min-h-screen fixed left-0 top-0 overflow-y-auto border-r transition-colors duration-200
+      <div className="relative">
+        {/* Sidebar */}
+        <div className={`fixed top-0 left-0 z-40 h-full w-64 transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+          md:translate-x-0 border-r
           ${theme === 'dark'
             ? 'bg-black border-gray-800'
             : 'bg-white border-gray-200'}`}>
@@ -176,6 +177,4 @@ const Sidebar = () => {
       </div>
     </>
   )
-}
-
-export default Sidebar 
+} 

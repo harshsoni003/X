@@ -24,13 +24,13 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   {
-    title: 'Layout Components',
-    href: '/components/layout',
+    title: 'Cards Components',
+    href: '/components/cards',
     icon: <LayoutGrid className="w-4 h-4" />,
     children: [
-      { title: 'Container', href: '/components/layout/container' },
-      { title: 'Grid', href: '/components/layout/grid' },
-      { title: 'Stack', href: '/components/layout/stack' },
+      { title: 'Lens Card', href: '/components/cards/lens-card' },
+      { title: 'Grid', href: '/components/cards/grid' },
+      { title: 'Stack', href: '/components/cards/stack' },
     ],
   },
   // {
