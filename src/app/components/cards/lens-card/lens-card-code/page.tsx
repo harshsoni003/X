@@ -177,7 +177,7 @@ export function Lens({
   },
 }
 
-export function LensCardCode() {
+export default function LensCardCode() {
   const { theme } = useTheme()
   const [activeTab, setActiveTab] = useState<'cli' | 'manual'>('cli')
   const [copiedInstall, setCopiedInstall] = useState(false)

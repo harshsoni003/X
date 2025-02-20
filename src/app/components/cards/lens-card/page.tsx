@@ -4,7 +4,7 @@ import ComponentsLayout from '@/components/layout/ComponentsLayout'
 import { useTheme } from '@/context/ThemeContext'
 import { Lens } from '@/app/components/cards/lens-card/lens-card-css/lens'
 import { Button } from '@/components/ui/button'
-import { LensCardCode } from './lens-card-code/page'
+import LensCardCode from './lens-card-code/page'
 import { useState } from 'react'
 import Image from 'next/image'
 
