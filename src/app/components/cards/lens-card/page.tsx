@@ -14,13 +14,13 @@ export default function LensCardComponent() {
 
   return (
     <ComponentsLayout>
-      <div className="space-y-8">
+      <div className="space-y-8 px-4 sm:px-6 md:px-8">
         <div>
-          <h1 className={`text-4xl font-bold mb-4 transition-colors
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-4 transition-colors
             ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Lens Card Component
           </h1>
-          <p className={`text-xl mb-8 transition-colors
+          <p className={`text-lg sm:text-xl mb-8 transition-colors
             ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             A magnifying lens effect for images.
           </p>
@@ -59,7 +59,7 @@ export default function LensCardComponent() {
 
           {/* Content first container*/}
           {activeTab === 'preview' ? (
-            <div className={`p-6 rounded-lg border transition-colors
+            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
               ${theme === 'dark' 
                 ? 'bg-gray-500 border-gray-800 text-gray-300' 
                 : 'bg-white border-gray-200 text-gray-700'}`}>    
@@ -71,12 +71,12 @@ export default function LensCardComponent() {
                       <img
                         src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338"
                         alt="Elegant diamond necklace"
-                        className="w-full h-96 object-cover rounded-lg"
+                        className="w-full h-64 sm:h-96 object-cover rounded-lg"
                       />
                     </Lens>
                   </div>
                   <div className="p-4">
-                    <h3 className={`text-xl font-semibold mb-2
+                    <h3 className={`text-lg sm:text-xl font-semibold mb-2
                       ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                       Diamond Necklace
                     </h3>
@@ -84,18 +84,18 @@ export default function LensCardComponent() {
                       ${theme === 'dark' ? 'text-stone-400' : 'text-gray-600'}`}>
                       Examine the intricate details and craftsmanship of this stunning diamond necklace with our magnifying lens.
                     </p>
-                    <div className="flex space-x-4">
-                      <Button>Book Now</Button>
-                      <Button variant="secondary">Add to Cart</Button>
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                      <Button className="w-full sm:w-auto">Book Now</Button>
+                      <Button variant="secondary" className="w-full sm:w-auto">Add to Cart</Button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           ) : (
-            <div className={`p-6 rounded-lg border transition-colors
+            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
               ${theme === 'dark' 
-                ? 'bg-gray-500 border-gray-800 text-gray-300'  //code secon container
+                ? 'bg-gray-500 border-gray-800 text-gray-300' 
                 : 'bg-white border-gray-200 text-gray-700'}`}>
               <LensCardCode />
             </div>
@@ -104,4 +104,4 @@ export default function LensCardComponent() {
       </div>
     </ComponentsLayout>
   )
-} 
+}

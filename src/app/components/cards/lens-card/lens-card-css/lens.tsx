@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, useMotionTemplate } from "framer-motion"
 import React from "react"
-import { useCallback, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 
 interface Position {
   x: number
@@ -42,6 +42,28 @@ export function Lens({
   const [isHovering, setIsHovering] = useState(false)
   const [mousePosition, setMousePosition] = useState<Position>(position)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [responsiveSize, setResponsiveSize] = useState(lensSize)
+  const [responsiveZoom, setResponsiveZoom] = useState(zoomFactor)
+
+  useEffect(() => {
+    const updateResponsiveValues = () => {
+      const width = window.innerWidth
+      if (width < 480) { // Mobile phones
+        setResponsiveSize(100)
+        setResponsiveZoom(1.5)
+      } else if (width < 768) { // Tablets
+        setResponsiveSize(130)
+        setResponsiveZoom(1.8)
+      } else { // Desktop
+        setResponsiveSize(lensSize)
+        setResponsiveZoom(zoomFactor)
+      }
+    }
+
+    updateResponsiveValues()
+    window.addEventListener('resize', updateResponsiveValues)
+    return () => window.removeEventListener('resize', updateResponsiveValues)
+  }, [lensSize, zoomFactor])
 
   const currentPosition = useMemo(() => {
     if (isStatic) return position
@@ -57,11 +79,26 @@ export function Lens({
     })
   }, [])
 
+  const handleTouchMove = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    const touch = e.touches[0]
+    const rect = e.currentTarget.getBoundingClientRect()
+    setMousePosition({
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top,
+    })
+  }, [])
+
+  const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    setIsHovering(true)
+    handleTouchMove(e)
+  }, [handleTouchMove])
+
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === "Escape") setIsHovering(false)
   }, [])
 
-  const maskImage = useMotionTemplate`radial-gradient(circle ${lensSize / 2}px at ${currentPosition.x}px ${currentPosition.y}px, ${lensColor} 100%, transparent 100%)`
+  const maskImage = useMotionTemplate`radial-gradient(circle ${responsiveSize / 2}px at ${currentPosition.x}px ${currentPosition.y}px, ${lensColor} 100%, transparent 100%)`
 
   const LensContent = useMemo(() => {
     const { x, y } = currentPosition
@@ -83,7 +120,7 @@ export function Lens({
         <div
           className="absolute inset-0"
           style={{
-            transform: `scale(${zoomFactor})`,
+            transform: `scale(${responsiveZoom})`,
             transformOrigin: `${x}px ${y}px`,
           }}
         >
@@ -91,15 +128,18 @@ export function Lens({
         </div>
       </motion.div>
     )
-  }, [currentPosition, lensSize, lensColor, zoomFactor, children, duration])
+  }, [currentPosition, responsiveSize, lensColor, responsiveZoom, children, duration])
 
   return (
     <div
       ref={containerRef}
-      className="relative z-20 overflow-hidden rounded-xl"
+      className="relative z-20 overflow-hidden rounded-xl touch-none"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={() => setIsHovering(false)}
       onKeyDown={handleKeyDown}
       role="region"
       aria-label={ariaLabel}

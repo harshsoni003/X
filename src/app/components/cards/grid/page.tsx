@@ -2,75 +2,78 @@
 
 import ComponentsLayout from '@/components/layout/ComponentsLayout'
 import { useTheme } from '@/context/ThemeContext'
+import { Grid } from './grid-card-css/grid'
+import { Button } from '@/components/ui/button'
+import GridCardCode from './grid-card-code/page'
+import { useState } from 'react'
 
 export default function GridComponent() {
   const { theme } = useTheme()
+  const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview')
 
   return (
     <ComponentsLayout>
-      <div className="space-y-8">
+      <div className="space-y-8 px-4 sm:px-6 md:px-8">
         <div>
-          <h1 className={`text-4xl font-bold mb-4 transition-colors
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-4 transition-colors
             ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Grid Component
           </h1>
-          <p className={`text-xl mb-8 transition-colors
+          <p className={`text-lg sm:text-xl mb-8 transition-colors
             ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Flexible grid system for creating complex layouts
           </p>
 
-          {/* Example Usage */}
-          <div className={`p-6 rounded-lg border transition-colors
-            ${theme === 'dark' 
-              ? 'bg-gray-900 border-gray-800 text-gray-300' 
-              : 'bg-white border-gray-200 text-gray-700'}`}>
-            <h2 className={`text-2xl font-bold mb-4
-              ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              Example Usage
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="border border-blue-500 p-4 rounded-lg text-center">Column 1</div>
-              <div className="border border-blue-500 p-4 rounded-lg text-center">Column 2</div>
-              <div className="border border-blue-500 p-4 rounded-lg text-center">Column 3</div>
+          {/* Tabs */}
+          <div className="border-b mb-6">
+            <div className="flex space-x-6">
+              <button
+                onClick={() => setActiveTab('preview')}
+                className={`pb-2 px-2 transition-colors relative
+                  ${activeTab === 'preview' 
+                    ? theme === 'dark' ? 'text-white' : 'text-black' 
+                    : theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}
+              >
+                Preview
+                {activeTab === 'preview' && (
+                  <div className={`absolute bottom-0 left-0 right-0 h-0.5
+                    ${theme === 'dark' ? 'bg-white' : 'bg-black'}`} />
+                )}
+              </button>
+              <button
+                onClick={() => setActiveTab('code')}
+                className={`pb-2 px-2 transition-colors relative
+                  ${activeTab === 'code' 
+                    ? theme === 'dark' ? 'text-white' : 'text-black' 
+                    : theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}
+              >
+                Code
+                {activeTab === 'code' && (
+                  <div className={`absolute bottom-0 left-0 right-0 h-0.5
+                    ${theme === 'dark' ? 'bg-white' : 'bg-black'}`} />
+                )}
+              </button>
             </div>
           </div>
 
-          {/* Code Example */}
-          <div className={`mt-8 p-6 rounded-lg border transition-colors
-            ${theme === 'dark' 
-              ? 'bg-gray-900 border-gray-800 text-gray-300' 
-              : 'bg-white border-gray-200 text-gray-700'}`}>
-            <h2 className={`text-2xl font-bold mb-4
-              ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              Code
-            </h2>
-            <pre className={`p-4 rounded-lg overflow-x-auto
-              ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}>
-              <code>{`<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-  <div>Column 1</div>
-  <div>Column 2</div>
-  <div>Column 3</div>
-</div>`}</code>
-            </pre>
-          </div>
-
-          {/* Grid Properties */}
-          <div className={`mt-8 p-6 rounded-lg border transition-colors
-            ${theme === 'dark' 
-              ? 'bg-gray-900 border-gray-800 text-gray-300' 
-              : 'bg-white border-gray-200 text-gray-700'}`}>
-            <h2 className={`text-2xl font-bold mb-4
-              ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              Grid Properties
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-              <li>Responsive columns</li>
-              <li>Gap control</li>
-              <li>Auto-flow options</li>
-              <li>Column/row spanning</li>
-              <li>Template areas</li>
-            </ul>
-          </div>
+          {/* Content */}
+          {activeTab === 'preview' ? (
+            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
+              ${theme === 'dark' 
+                ? 'bg-gray-500 border-gray-800 text-gray-300' 
+                : 'bg-white border-gray-200 text-gray-700'}`}>    
+              <div className="max-w-md mx-auto">
+                <Grid />
+              </div>
+            </div>
+          ) : (
+            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
+              ${theme === 'dark' 
+                ? 'bg-gray-500 border-gray-800 text-gray-300' 
+                : 'bg-white border-gray-200 text-gray-700'}`}>
+              <GridCardCode />
+            </div>
+          )}
         </div>
       </div>
     </ComponentsLayout>
