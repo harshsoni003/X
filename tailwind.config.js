@@ -5,7 +5,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: ['class', 'class'],
+  darkMode: ['class'],
   theme: {
   	extend: {
   		borderRadius: {
@@ -58,4 +58,9 @@ module.exports = {
   	}
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: [
+    'delay-[var(--delay)]',
+    'duration-[var(--duration)]',
+    'ease-[var(--easing)]'
+  ]
 } 
