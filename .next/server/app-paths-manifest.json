@@ -1,7 +1,9 @@
 {
-  "/components/cards/grid/page": "app/components/cards/grid/page.js",
-  "/components/page": "app/components/page.js",
-  "/components/cards/stack/page": "app/components/cards/stack/page.js",
   "/components/cards/page": "app/components/cards/page.js",
-  "/components/cards/lens-card/page": "app/components/cards/lens-card/page.js"
+  "/pricing/page": "app/pricing/page.js",
+  "/components/buttons/gradient-button/page": "app/components/buttons/gradient-button/page.js",
+  "/components/page": "app/components/page.js",
+  "/components/cards/glare-card/page": "app/components/cards/glare-card/page.js",
+  "/components/buttons/page": "app/components/buttons/page.js",
+  "/components/cards/bookcard/page": "app/components/cards/bookcard/page.js"
 }

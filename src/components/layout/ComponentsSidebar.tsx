@@ -29,8 +29,20 @@ const navigation: NavItem[] = [
     icon: <LayoutGrid className="w-4 h-4" />,
     children: [
       { title: 'Lens Card', href: '/components/cards/lens-card' },
-      { title: 'Grid', href: '/components/cards/grid' },
-      { title: 'Stack', href: '/components/cards/stack' },
+      { title: 'Glare Card', href: '/components/cards/glare-card' },
+      { title: 'Book Card', href: '/components/cards/bookcard' },
+      { title: 'Popup Card', href: '/components/cards/popupcard' },
+    ],
+  },
+  {
+    title: 'Buttons Components',
+    href: '/components/buttons',
+    icon: <Square className="w-4 h-4" />,
+    children: [
+      { title: 'Gradient Button', href: '/components/buttons/gradient-button' },
+      { title: 'Shine Button', href: '/components/buttons/shine-button' },
+      { title: 'Glow Button', href: '/components/buttons/glow-button' },
+      { title: 'Pulse Button', href: '/components/buttons/pulse-button' },
     ],
   },
   // {

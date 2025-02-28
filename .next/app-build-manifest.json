@@ -6,45 +6,65 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/components/cards/popupcard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/cards/popupcard/page.js"
+    ],
+    "/components/cards/bookcard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/cards/bookcard/page.js"
+    ],
+    "/components/cards/glare-card/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/cards/glare-card/page.js"
+    ],
+    "/components/cards/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/cards/page.js"
+    ],
     "/components/cards/lens-card/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/components/cards/lens-card/page.js"
-    ],
-    "/components/cards/stack/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/stack/page.js"
-    ],
-    "/components/cards/grid/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/grid/page.js"
-    ],
-    "/templates/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/templates/page.js"
-    ],
-    "/templates/portfolio/professional-type-1/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/templates/portfolio/professional-type-1/page.js"
     ],
     "/components/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/components/page.js"
     ],
-    "/page": [
+    "/components/buttons/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/components/buttons/page.js"
     ],
-    "/components/cards/page": [
+    "/components/buttons/gradient-button/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/page.js"
+      "static/chunks/app/components/buttons/gradient-button/page.js"
+    ],
+    "/components/buttons/shine-button/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/buttons/shine-button/page.js"
+    ],
+    "/components/buttons/glow-button/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/buttons/glow-button/page.js"
+    ],
+    "/components/buttons/pulse-button/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/components/buttons/pulse-button/page.js"
+    ],
+    "/pricing/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pricing/page.js"
     ]
   }
 }

@@ -6,27 +6,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 
-export default function LayoutComponents() {
+export default function CardsComponents() {
   const { theme } = useTheme()
 
   const components = [
     {
-      title: 'Container',
-      description: 'A responsive container component for content layout',
-      href: '/components/layout/container',
-      image: 'https://picsum.photos/400/200',
+      title: 'Lens Card',
+      description: 'A magnifying lens effect for images',
+      href: '/components/cards/lens-card',
+      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338',
     },
     {
-      title: 'Grid',
-      description: 'Flexible grid system for complex layouts',
-      href: '/components/layout/grid',
-      image: 'https://picsum.photos/400/201',
+      title: 'Glare Card',
+      description: 'Interactive card with holographic glare effects',
+      href: '/components/cards/glare-card',
+      image: 'https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0',
     },
     {
-      title: 'Stack',
-      description: 'Vertical and horizontal stack layouts',
-      href: '/components/layout/stack',
-      image: 'https://picsum.photos/400/202',
+      title: 'Book Card',
+      description: 'Animated book opening effect card',
+      href: '/components/cards/bookcard',
+      image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd',
+    },
+    {
+      title: 'Popup Card',
+      description: 'Beautiful card with animated gradient background',
+      href: '/components/cards/popupcard',
+      image: '/images/shoes.webp',
     },
   ]
 
@@ -36,11 +42,11 @@ export default function LayoutComponents() {
         <div>
           <h1 className={`text-4xl font-bold mb-4 transition-colors
             ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-            Layout Components
+            Card Components
           </h1>
           <p className={`text-xl mb-8 transition-colors
             ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-            Essential components for building responsive layouts
+            A collection of beautiful and interactive card components
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
