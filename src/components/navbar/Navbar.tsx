@@ -17,7 +17,7 @@ export default function Navbar() {
     <>
       <header className={`fixed top-0 z-50 w-full border-b backdrop-blur-sm transition-all duration-100
         ${theme === 'dark' 
-          ? 'bg-black/80 border-gray-800' 
+          ? 'bg-black border-gray-800'
           : 'bg-white border-gray-100'}`}
       >
         <nav className="flex h-16 items-center justify-between px-4 sm:px-6 max-w-7xl mx-auto">
@@ -133,7 +133,7 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className={`md:hidden absolute top-16 left-0 right-0 border-b py-4 px-6 space-y-4 backdrop-blur-sm
             ${theme === 'dark' 
-              ? 'bg-black/90 border-gray-800' 
+              ? 'bg-black border-gray-800'
               : 'bg-white border-gray-100'}`}
           >
             <MobileNavLink href="/components" onClick={() => setIsMobileMenuOpen(false)}>
