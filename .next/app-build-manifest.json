@@ -15,21 +15,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/components/page.js"
-    ],
-    "/components/cards/popupcard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/popupcard/page.js"
-    ],
-    "/components/cards/bookcard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/bookcard/page.js"
-    ],
-    "/components/cards/glare-card/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/components/cards/glare-card/page.js"
     ]
   }
 }

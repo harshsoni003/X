@@ -54,7 +54,28 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+  		animation: {
+  			'spin-slow': 'spin 20s linear infinite',
+  			'spin-slow-reverse': 'spin 15s linear infinite reverse',
+  			'gradient': 'gradient 8s linear infinite',
+  		},
+  		keyframes: {
+  			gradient: {
+  				'0%, 100%': {
+  					'background-position': '0% 50%',
+  				},
+  				'50%': {
+  					'background-position': '100% 50%',
+  				},
+  			},
+  		},
+  		backgroundSize: {
+  			'auto': 'auto',
+  			'cover': 'cover',
+  			'contain': 'contain',
+  			'200%': '200%',
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

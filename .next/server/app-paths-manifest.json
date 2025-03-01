@@ -1,7 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/components/cards/popupcard/page": "app/components/cards/popupcard/page.js",
-  "/components/cards/bookcard/page": "app/components/cards/bookcard/page.js",
   "/components/page": "app/components/page.js",
-  "/components/cards/glare-card/page": "app/components/cards/glare-card/page.js"
+  "/page": "app/page.js"
 }
