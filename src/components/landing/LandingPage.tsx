@@ -223,14 +223,14 @@ export default function LandingPage() {
               {/* Action Buttons */}
               <div className="flex flex-row gap-4 mt-8">
                 <button 
-                  className={`whitespace-nowrap px-5 py-2.5 rounded-full shadow-md hover:scale-105 transition-transform duration-300
+                  className={`whitespace-nowrap text-base sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform duration-300
                     ${theme === 'dark' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'}`}
                   onClick={() => router.push('/components')}
                 >
                   Browse Components
                 </button>
                 <button 
-                  className={`whitespace-nowrap px-5 py-2.5 rounded-full shadow-md hover:scale-105 transition-transform duration-300
+                  className={`whitespace-nowrap text-base sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform duration-300
                     ${theme === 'dark' ? 'bg-gradient-to-r from-green-400 to-blue-500 text-white' : 'bg-gradient-to-r from-blue-500 to-green-400 text-white'}`}
                   onClick={() => router.push('/templates')}
                 >
@@ -239,17 +239,17 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/*   */}
+            {/* Right side - Tech stack visualization */}
             <div className="w-full lg:w-1/2 flex justify-center">
-              <div ref={containerRef} className="relative w-[350px] sm:w-[450px] lg:w-[500px] xl:w-[550px] aspect-square">
-                <div className="relative w-full aspect-square p-4 sm:p-6 lg:p-8">
-                  {/* Center circle - make it larger */}
+              <div ref={containerRef} className="relative w-[340px] sm:w-[400px] lg:w-[450px] xl:w-[500px] aspect-square">
+                <div className="relative w-full aspect-square p-4 sm:p-5 lg:p-6">
+                  {/* Center circle - adjusted for better responsive sizing */}
                   <Circle
                     ref={centerRef}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                     bg-gradient-to-r from-green-400 to-blue-500 text-white border-none w-20 sm:w-24 lg:w-28 h-20 sm:h-24 lg:h-28"
+                     bg-gradient-to-r from-green-400 to-blue-500 text-white border-none w-20 sm:w-20 lg:w-24 h-20 sm:h-20 lg:h-24"
                   >
-                    <span className="text-base sm:text-lg lg:text-xl font-medium text-white">InfinityUI</span>
+                    <span className="text-base sm:text-base lg:text-lg font-medium text-white">InfinityUI</span>
                   </Circle>
 
                   {/* Animated beams */}
@@ -318,11 +318,11 @@ export default function LandingPage() {
                   {/* Top icons - React and Next.js */}
                   <div className="absolute top-12 left-12">
                     <Circle ref={websiteRef}>
-                      <div className={`group bg-gradient-to-r from-blue-400 to-blue-500 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-blue-400 to-blue-500 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25
                         ${theme === 'dark' ? 'hover:bg-blue-400' : 'hover:bg-blue-500'}`}
                       >
-                        <SiReact className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-180" />
+                        <SiReact className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-180" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
@@ -332,11 +332,11 @@ export default function LandingPage() {
 
                   <div className="absolute top-12 right-12">
                     <Circle ref={dataRef}>
-                      <div className={`group bg-gradient-to-r from-gray-600 to-gray-700 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-gray-600 to-gray-700 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25
                         ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-800'}`}
                       >
-                        <SiNextdotjs className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                        <SiNextdotjs className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-12" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
@@ -347,11 +347,11 @@ export default function LandingPage() {
                   {/* Middle icons - MongoDB and Supabase */}
                   <div className="absolute top-1/2 -translate-y-1/2 left-12">
                     <Circle ref={mongodbRef}>
-                      <div className={`group bg-gradient-to-r from-green-500 to-green-600 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-green-500 to-green-600 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/25
                         ${theme === 'dark' ? 'hover:bg-green-500' : 'hover:bg-green-600'}`}
                       >
-                        <SiMongodb className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                        <SiMongodb className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-12" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
@@ -361,11 +361,11 @@ export default function LandingPage() {
 
                   <div className="absolute top-1/2 -translate-y-1/2 right-12">
                     <Circle ref={supabaseRef}>
-                      <div className={`group bg-gradient-to-r from-green-400 to-green-500 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-green-400 to-green-500 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/25
                         ${theme === 'dark' ? 'hover:bg-green-400' : 'hover:bg-green-500'}`}
                       >
-                        <SiSupabase className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                        <SiSupabase className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-12" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
@@ -376,11 +376,11 @@ export default function LandingPage() {
                   {/* Bottom icons - TypeScript and Tailwind */}
                   <div className="absolute bottom-12 left-12">
                     <Circle ref={pdfRef}>
-                      <div className={`group bg-gradient-to-r from-blue-500 to-blue-600 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-blue-500 to-blue-600 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25
                         ${theme === 'dark' ? 'hover:bg-blue-500' : 'hover:bg-blue-600'}`}
                       >
-                        <SiTypescript className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                        <SiTypescript className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-12" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
@@ -390,11 +390,11 @@ export default function LandingPage() {
 
                   <div className="absolute bottom-12 right-12">
                     <Circle ref={integrationsRef}>
-                      <div className={`group bg-gradient-to-r from-cyan-400 to-cyan-500 p-2.5 sm:p-3 lg:p-4 rounded-xl
+                      <div className={`group bg-gradient-to-r from-cyan-400 to-cyan-500 p-2.5 sm:p-2.5 lg:p-3 rounded-xl
                         transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25
                         ${theme === 'dark' ? 'hover:bg-cyan-400' : 'hover:bg-cyan-500'}`}
                       >
-                        <SiTailwindcss className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                        <SiTailwindcss className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-white transition-transform duration-300 group-hover:rotate-12" />
                       </div>
                     </Circle>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium whitespace-nowrap">
