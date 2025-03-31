@@ -34,6 +34,24 @@ export default function CardsComponents() {
       href: '/components/cards/popupcard',
       image: '/images/shoes.webp',
     },
+    {
+      title: 'Pin Card',
+      description: 'Pinterest-inspired card with hover animations',
+      href: '/components/cards/pin-card',
+      image: '/images/virat.jpg',
+    },
+    {
+      title: 'Tilt Card',
+      description: '3D tilt effect card that responds to mouse movement',
+      href: '/components/cards/tilt-card',
+      image: 'https://images.unsplash.com/photo-1579033461380-adb47c3eb938?q=80&w=1964&auto=format&fit=crop',
+    },
+    {
+      title: 'Display Card',
+      description: 'Showcase card with elegant product display features',
+      href: '/components/cards/display-card',
+      image: '/images/display.jpg',
+    },
   ]
 
   return (

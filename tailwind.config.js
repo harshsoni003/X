@@ -53,12 +53,21 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			"color-1": "hsl(var(--color-1))",
+  			"color-2": "hsl(var(--color-2))",
+  			"color-3": "hsl(var(--color-3))",
+  			"color-4": "hsl(var(--color-4))",
+  			"color-5": "hsl(var(--color-5))",
   		},
   		animation: {
   			'spin-slow': 'spin 20s linear infinite',
   			'spin-slow-reverse': 'spin 15s linear infinite reverse',
   			'gradient': 'gradient 8s linear infinite',
+  			'rainbow': 'rainbow 4s linear infinite',
+  			'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
+  			'star-movement-top': 'star-movement-top linear infinite alternate',
+  			'gradient-x': 'gradient-x 3s ease infinite',
   		},
   		keyframes: {
   			gradient: {
@@ -67,6 +76,29 @@ module.exports = {
   				},
   				'50%': {
   					'background-position': '100% 50%',
+  				},
+  			},
+  			rainbow: {
+  				'0%': { backgroundPosition: '0% 50%' },
+  				'50%': { backgroundPosition: '100% 50%' },
+  				'100%': { backgroundPosition: '0% 50%' },
+  			},
+  			'star-movement-bottom': {
+  				'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+  				'100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+  			},
+  			'star-movement-top': {
+  				'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+  				'100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+  			},
+  			'gradient-x': {
+  				'0%, 100%': {
+  					'background-size': '200% 200%',
+  					'background-position': 'left center'
+  				},
+  				'50%': {
+  					'background-size': '200% 200%',
+  					'background-position': 'right center'
   				},
   			},
   		},

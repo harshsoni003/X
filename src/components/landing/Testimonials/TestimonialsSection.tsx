@@ -15,30 +15,30 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     author: "Sarah Chen",
-    handle: "@PratikKadam_",
+    handle: "@P_",
     content: "InfinityUI has revolutionized my development workflow. The AI-powered components are incredibly intuitive and save me countless hours. A true game-changer for modern web development! 🚀",
-    avatar: "/images/pratik.jpg",
+    avatar: "/images/test1.jpg",
     date: "March 15, 2024"
   },
   {
     author: "Alex Rivera",
-    handle: "@PratikKadam_",
+    handle: "@Pr_",
     content: "Been exploring InfinityUI for a month now and I'm amazed. The component library is extensive, the code is clean, and the customization options are fantastic. This is next-level UI development! ✨",
-    avatar: "/images/pratik.jpg",
+    avatar: "/images/test1.jpg",
     date: "March 12, 2024"
   },
   {
     author: "Mike Johnson",
-    handle: "@PratikKadam_",
+    handle: "@Pratdm_",
     content: "The SVGL integration in InfinityUI is pure genius! Having instant access to a professional logo library and being able to customize on the fly has streamlined our design process. Excellent work! 💯",
-    avatar: "/images/pratik.jpg",
+    avatar: "/images/test1.jpg",
     date: "March 10, 2024"
   },
   {
     author: "Emma Wilson",
-    handle: "@PratikKadam_",
+    handle: "@",
     content: "InfinityUI's enhancement features are outstanding. The intelligent suggestions and seamless component integration make it feel like having a senior UI engineer on the team. Essential for modern projects! 🎨",
-    avatar: "/images/pratik.jpg",
+    avatar: "/images/test1.jpg",
     date: "March 8, 2024"
   }
 ]

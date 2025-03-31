@@ -63,8 +63,8 @@ export default function FounderSection() {
             </div>
 
             {/* Decorative Dots */}
-            <div className="absolute -top-4 -right-4 w-6 h-6 bg-blue-500 rounded-full blur-sm opacity-60" />
-            <div className="absolute -bottom-4 -left-4 w-5 h-5 bg-purple-500 rounded-full blur-sm opacity-60" />
+            <div className="absolute -top-4 -right-4 w-4 h-4 bg-blue-500 rounded-full blur-sm opacity-60" />
+            <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-purple-500 rounded-full blur-sm opacity-60" />
           </div>
 
           {/* Content Section */}

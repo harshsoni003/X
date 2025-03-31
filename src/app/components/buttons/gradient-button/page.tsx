@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
 import ComponentsLayout from '@/components/layout/ComponentsLayout'
 import { useTheme } from '@/context/ThemeContext'
-import { GradientButton } from './gradient-button-css/gradient'
+import { GradientButtonDemo } from './gradient-button-css/gradient'
 import GradientButtonCode from './gradient-button-code/page'
 import { useState } from 'react'
 
@@ -57,19 +57,17 @@ export default function GradientButtonComponent() {
 
           {/* Content */}
           {activeTab === 'preview' ? (
-            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
+            <div className={`p-8 rounded-lg border transition-colors flex items-center justify-center min-h-[200px]
               ${theme === 'dark' 
-                ? 'bg-gray-500 border-gray-800 text-gray-300' 
-                : 'bg-white border-gray-200 text-gray-700'}`}>    
-              <div className="flex flex-wrap gap-4 justify-center">
-                <GradientButton />
-              </div>
+                ? 'bg-gray-900 border-gray-800' 
+                : 'bg-white border-gray-200'}`}>    
+              <GradientButtonDemo />
             </div>
           ) : (
-            <div className={`p-4 sm:p-6 rounded-lg border transition-colors
+            <div className={`rounded-lg border transition-colors
               ${theme === 'dark' 
-                ? 'bg-gray-500 border-gray-800 text-gray-300' 
-                : 'bg-white border-gray-200 text-gray-700'}`}>
+                ? 'bg-gray-900 border-gray-800' 
+                : 'bg-white border-gray-200'}`}>
               <GradientButtonCode />
             </div>
           )}

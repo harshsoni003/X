@@ -23,6 +23,32 @@ const Components = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Structure Section */}
+          <Link href="/components/structure" 
+            className={`p-6 rounded-lg transition-all hover:scale-105 relative overflow-hidden
+              ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} 
+              shadow-lg`}>
+            <div className="relative z-10">
+              <h2 className={`text-2xl font-semibold mb-3
+                ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                Structure
+              </h2>
+              <p className={`mb-4
+                ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                Framework-specific structure components for NextJS and Angular
+              </p>
+            </div>
+            <div className="absolute right-4 bottom-4 w-24 h-24 opacity-20">
+              <Image
+                src="https://api.iconify.design/material-symbols:architecture.svg"
+                alt="Structure Icon"
+                width={96}
+                height={96}
+                className={`object-contain ${theme === 'dark' ? 'invert' : ''}`}
+              />
+            </div>
+          </Link>
+          
           {/* Cards Section */}
           <Link href="/components/cards" 
             className={`p-6 rounded-lg transition-all hover:scale-105 relative overflow-hidden

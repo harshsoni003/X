@@ -24,6 +24,16 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   {
+    title: 'Structure Setup',
+    href: '/components/structure',
+    icon: <ChevronsRight className="w-4 h-4" />,
+    children: [
+      { title: 'React', href: '/components/structure/react' },
+      { title: 'Next.js', href: '/components/structure/nextjs' },
+      { title: 'Angular', href: '/components/structure/angular' },
+    ],
+  },
+  {
     title: 'Cards Components',
     href: '/components/cards',
     icon: <LayoutGrid className="w-4 h-4" />,
@@ -32,6 +42,9 @@ const navigation: NavItem[] = [
       { title: 'Glare Card', href: '/components/cards/glare-card' },
       { title: 'Book Card', href: '/components/cards/bookcard' },
       { title: 'Popup Card', href: '/components/cards/popupcard' },
+      { title: 'Tilt Card', href: '/components/cards/tilt-card' },
+      { title: 'Display Card', href: '/components/cards/display-card' },
+      { title: 'Pin Card', href: '/components/cards/pin-card' },
     ],
   },
   {
@@ -40,9 +53,10 @@ const navigation: NavItem[] = [
     icon: <Square className="w-4 h-4" />,
     children: [
       { title: 'Gradient Button', href: '/components/buttons/gradient-button' },
-      { title: 'Shine Button', href: '/components/buttons/shine-button' },
-      { title: 'Glow Button', href: '/components/buttons/glow-button' },
+   
+      { title: 'Rainbow Button', href: '/components/buttons/rainbow-button' },
       { title: 'Pulse Button', href: '/components/buttons/pulse-button' },
+      { title: 'Star Border', href: '/components/buttons/star-border' },
     ],
   },
   // {

@@ -1,3 +1,8 @@
 {
-  "/page": "app/page.js"
+  "/components/cards/display-card/page": "app/components/cards/display-card/page.js",
+  "/components/page": "app/components/page.js",
+  "/components/cards/popupcard/page": "app/components/cards/popupcard/page.js",
+  "/page": "app/page.js",
+  "/components/structure/page": "app/components/structure/page.js",
+  "/templates/page": "app/templates/page.js"
 }

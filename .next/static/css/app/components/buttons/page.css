@@ -1,0 +1,99 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/components/buttons/star-border-button/star-border-button-css/star-border.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.star-border-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.star-border-effect {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: transparent;
+  z-index: 0;
+}
+
+.star-border-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #ff00e5 0deg,
+    #8a2be2 90deg,
+    #4169e1 180deg,
+    #8a2be2 270deg,
+    #ff00e5 360deg
+  );
+  border-radius: inherit;
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+
+.star-border-effect::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: inherit;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.star-border-button:hover .star-border-effect::before {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Star shapes that appear on hover */
+.star-border-button::before,
+.star-border-button::after {
+  content: '★';
+  position: absolute;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.star-border-button::before {
+  top: 10%;
+  left: 10%;
+}
+
+.star-border-button::after {
+  bottom: 10%;
+  right: 10%;
+}
+
+.star-border-button:hover::before,
+.star-border-button:hover::after {
+  opacity: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+.star-border-button:hover::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(20deg);
+  }
+} 
